@@ -1,0 +1,604 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>RED Carpet by Vikas Kumar</title>
+	<style type="text/css">
+		*{
+			margin: 0;
+			padding: 0;
+			transition: all 1s;
+		}
+
+/*		Title BOX*/
+		.title{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			width: 100%;
+			height: 60px;
+		}
+
+/*		Start box Container*/
+		.startGame{
+			width: 100%;
+			height: 20px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			background-color: black;
+			color: white;
+		}
+
+/*		Main---- Container and Blocks*/
+		.container{
+			display: flex;
+			flex-wrap: wrap;
+			width: 100%;
+			height: 600px;
+			border: 1px solid;
+		}
+		#block{
+			width: 100px;
+			height: 100px;
+/*			border: 1px solid;*/
+			margin: 10px;
+			transition: all 1s;
+		}
+		#block-Start{
+			display: flex;
+			flex-wrap: wrap;
+			width: 100px;
+			align-items: top;
+			justify-content: center;
+			height: 20px;
+/*			border: 1px solid;*/
+			margin: 10px;
+		}
+
+/*		Start1*/
+		.start1{
+			margin: 15px;
+			padding: 5px;
+			width: 40px;
+			height: 40px;
+			transition: all 1s;
+			background-color: red;
+			border-radius: 5px;
+		}
+		.start1:hover{
+			margin-left: 25px;
+			width: 120px;
+			border-radius: 5px;
+		}
+
+/*		Start 2*/
+		.start2{
+			display: flex;
+			justify-content: center;
+			padding: 5px;
+			margin: 25px;
+			width: 40px;
+			height: 40px;
+			transition: all 1s;
+			background-color: red;
+			border-radius: 5px;
+		}
+		.start2:hover{
+			margin-top: 25px;
+			height: 280px;
+			width: 40px;
+			border-radius: 5px;
+		}
+
+/*		Start 3*/
+		.start3{
+			margin: 25px;
+			width: 40px;
+			height: 40px;
+			transition: all 1s;
+			background-color: red;
+			border-radius: 5px;
+		}
+		.start3:hover{
+			margin-right: 100px;
+			padding-left: 100px;
+		}
+/*		End of Start Buttons*/
+
+		p{
+			margin: 25px;
+			size: 10px;
+		}
+
+		.words{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			color: white;
+		}
+
+/*		Find Correct Word 1*/
+		.currectCarpet{
+			padding: 2px;
+			height: 50px;
+			width: 50px;
+/*			background-color: darkblue;*/
+		}
+		.currectCarpet:hover{
+			scale: 1.5;
+			background-color: green;
+			color: white;
+		}
+		#min-block{
+			margin-left: 15px;
+		}
+
+/*       Triangles*/
+		.triangleDown{
+			width: 0;
+			height: 0;
+			border-top: 25px solid white;
+			border-left: 10px solid transparent;
+			border-right: 10px solid transparent;
+			transition: all 1s;
+		}
+		.triangleUp{
+			width: 0;
+			height: 0;
+			border-bottom: 25px solid white;
+			border-left: 10px solid transparent;
+			border-right: 10px solid transparent;
+			transition: all 1s;
+		}
+		.triangleLeft{
+			width: 0;
+			height: 0;
+			border-top: 10px solid	transparent	;
+			border-bottom: 10px solid transparent;
+			border-right: 25px solid white;
+			transition: all 1s;
+		}
+		.triangleRight{
+			width: 0;
+			height: 0;
+			border-top: 10px solid	transparent	;
+			border-bottom: 10px solid transparent;
+			border-left: 25px solid white;
+			transition: all 1s;
+		}
+/*		Triangles END 	*/
+
+		.marginTop{
+			margin-top: 15px;
+		}	
+
+		#correct{
+			text-align: center;
+		}
+		.carpetWrong:hover{
+			background-color: darkred;
+			scale: 5;
+		}
+
+/*		Carpet Roots*/
+		#root1{/*
+			width: 50px;
+			height: 50px;
+			background-color: red;*/
+		}
+		#root1:hover{
+			width: 50px;
+			height: 50px;
+			background-color: red;
+			margin-top: 110px;
+			padding-bottom: 110px;
+		}
+
+		#root2{
+			/*width: 50px;
+			height: 50px;
+			background-color: red;*/
+		}
+		#root2:hover{
+			width: 50px;
+			height: 50px;
+			background-color: red;
+			margin-right: 215px;
+			padding-left: 215px;
+		}
+
+		#root3{
+			/*width: 50px;
+			height: 50px;
+			background-color: red;*/
+		}
+		#root3:hover{
+			width: 50px;
+			height: 50px;
+			background-color: red;
+			margin-bottom: 260px;
+			padding-top: 260px;
+		}
+
+		#root4{
+			/*width: 50px;
+			height: 50px;
+			background-color: red;*/
+		}
+		#root4:hover{
+			width: 50px;
+			height: 50px;
+			background-color: red;
+			margin-left: 80px;
+			padding-right: 80px;
+		}
+
+		#root5{
+			/*width: 50px;
+			height: 50px;
+			background-color: red;*/
+		}
+		#root5:hover{
+			width: 50px;
+			height: 50px;
+			background-color: red;
+			margin-left: 435px;
+			padding-right: 435px;
+		}
+
+		#root6{
+			/*width: 50px;
+			height: 50px;
+			background-color: red;*/
+		}
+		#root6:hover{
+			width: 50px;
+			height: 50px;
+			background-color: red;
+			margin-top: 250px;
+			padding-bottom: 250px;
+		}
+
+		#root7{
+			/*width: 50px;
+			height: 50px;
+			background-color: red;
+		*/}
+		#root7:hover{
+			width: 50px;
+			height: 50px;
+			background-color: red;
+			margin-right: 700px;
+			padding-left: 700px;
+		}
+
+		#root8{
+			/*width: 50px;
+			height: 50px;
+			background-color: red;*/
+		}
+		#root8:hover{
+			width: 50px;
+			height: 50px;
+			background-color: red;
+			margin-bottom: 110px;
+			padding-top: 110px;
+		}
+/*		END of Roots*/
+
+		.Instructions{
+			display: flex;
+			justify-content: center;
+			width: 100%;
+			height: 220px;
+			border: 1px solid;
+		}
+
+		.Instructions div{
+			display: table;
+			width: 500px;
+			height: 100%;
+/*			background-color: red;*/
+		}
+
+/*		Footer*/
+		.footer{
+			display: flex;
+			justify-content: center;
+			width: 100%;
+			height: 150px;
+			background-color: red;
+			color: white;
+		}
+
+		#block1{
+			align-items: center;
+			justify-content: center;
+			height: 100%;
+			width: 500px;
+		}
+
+		#footer-rights{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			height: 15px;
+			background-color: black;
+			color: white;
+		}
+
+		span{
+			color: red;
+			font-weight: 100;
+		}
+
+		.title{
+			background-color: black;
+			color: white;
+		}
+
+		.Instructions{
+			background-color: yellow;
+		}
+
+		/*#LW{
+			size: 5px;
+
+		}*/
+
+	</style>
+</head>
+<body>
+
+<!-- Title Container -->
+
+	<div class="title">
+		<h1>Play <span>Red Carpet</span></h1>
+	</div>
+	<div class="Instructions">
+		<div class="ins-container">
+			<h1>Instructions</h1>
+			<ul>
+				<li>This page is not responsive so... use your PC Browser and make sure zoom your to 100%. Then you will be able to see your game Layout clear.</li>
+				<li>In the game pannel... there are many <b>letters</b> from english word are hidden sequencly.</li>
+				<li>There have 3 Starting Points... A instruction Arrow is shown below them. Just point your mouse on them.</li>
+				<li>After Pointing... You able to see a red path is pointing to next block. To find the next <b>letter</b>. </li>
+				<li>IF you able to find all <b>letters</b>... go to the footer for next Instructions.</li>
+				<b>Hint:</b> <i>First Letter of the Word is <b>M</b> and the last one is <b>G</b></i>.
+			</ul>
+		</div>
+	</div>
+	<div class="startGame">
+		<div id="block-Start">Start</div>
+		<div id="block-Start"></div>
+		<div id="block-Start"></div>
+		<div id="block-Start"></div>
+		<div id="block-Start"></div>
+		<div id="block-Start">Start</div>
+		<div id="block-Start"></div>
+		<div id="block-Start"></div>
+		<div id="block-Start"></div>
+		<div id="block-Start"></div>
+		<div id="block-Start">Start</div>
+	</div>
+
+<!-- Start Button Container Block -->
+
+	<div class="container">
+		<div id="block">
+			<div class="start1">
+				<div class="triangleRight"></div>
+			</div>
+		</div>
+
+<!-- 	Start Position 1 -->
+		<div id="block" class="words">
+			<div id="root1">
+				<div class="currectCarpet">
+					<div id="min-block" class="marginTop">
+						<div class="triangleDown"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="block"></div>
+
+		<div id="block" class="words">
+			<div id="root4">
+				<div class="currectCarpet">
+					<div id="min-block" class="marginTop">
+						<div class="triangleRight"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="block" class="words">
+			<div id="root1">
+				<div class="currectCarpet">
+					<div id="min-block">
+						<h3>R<h3>
+						<!-- <div class="triangleDown"></div> -->
+					</div>
+				</div>
+			</div>
+		</div>
+
+<!-- 	Start Position 2 -->
+		<div id="block">
+			<div class="start2">
+				<div class="triangleDown"></div>
+			</div>
+		</div>
+		<div id="block"></div>
+		<div id="block"></div>
+		<div id="block"></div>
+		<div id="block" class="words">
+			<div id="root6">
+				<div class="currectCarpet">
+					<div id="min-block" class="marginTop">
+						<div class="triangleDown"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="block" class="words">
+			<div class="start3">
+				<div class="triangleLeft"></div>
+			</div>
+		</div>
+
+
+<!-- Words Container Blogs -->
+
+		<div id="block"></div>
+		<div id="block" class="words">
+			<div class="carpetWrong">
+				<div id="min-block">
+					<h3 id="correct">LOL<h3>
+				</div>
+			</div>
+		</div>
+		<div id="block"></div>
+		<div id="block"></div>
+		<div id="block" class="words">
+			<div id="root5">
+				<div class="currectCarpet">
+					<div id="min-block" class="marginTop">
+						<div class="triangleRight"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="block"></div>
+		<div id="block"></div>
+		<div id="block"></div>
+		<div id="block" class="words">
+			<div id="root6">
+				<div class="currectCarpet">
+					<div id="min-block">
+						<h3>N<h3>
+						<!-- <div class="triangleDown"></div> -->
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="block"></div>
+		<div id="block"></div>
+		<div id="block" class="words">
+			<div class="currectCarpet">
+				<div id="min-block">
+					<h3>G<h3>
+					<!-- <p id="LW">Last Word</p> -->
+				</div>
+			</div>
+		</div>
+		<div id="block"></div>
+		<div id="block" class="words">
+			<div id="root2">
+				<div class="currectCarpet">
+					<div id="min-block" class="marginTop">
+						<div class="triangleLeft"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="block" class="words">
+			<div id="root3">
+				<div class="currectCarpet">
+					<div id="min-block">
+						<h3>O<h3>
+						<!-- <div class="triangleUp"></div> -->
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="block"></div>
+
+		<div id="block" class="words">
+			<div id="root2">
+				<div class="currectCarpet">
+					<div id="min-block">
+						<h3>M</h3>
+						<!-- <div class="triangleLeft"></div> -->
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div id="block"></div>
+		<div id="block"></div>
+		<div id="block"></div>
+		<div id="block" class="words">
+			<div id="root4">
+				<div class="currectCarpet">
+					<div id="min-block" class="marginTop">
+						<div class="triangleRight"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="block" class="words">
+			<div id="root1">
+				<div class="currectCarpet">
+					<div id="min-block" class="marginTop">
+						<div class="triangleDown"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="block"></div>
+		<div id="block"></div>
+		<div id="block" class="words">
+			<div id="root8">
+				<div class="currectCarpet">
+					<div id="min-block">
+						<h3>N<h3>
+						<!-- <div class="triangleUp"></div> -->
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="block"></div>
+		<div id="block"></div>
+		<div id="block"></div>
+		<div id="block"></div>
+		<div id="block"></div>
+		<div id="block" class="words">
+			<div id="root7">
+				<div class="currectCarpet">
+					<div id="min-block">
+						<h3>I<h3>
+						<!-- <div class="triangleLeft"></div> -->
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="block"></div>
+		<div id="block" class="words">
+			<div class="carpetWrong">
+				<div id="min-block">
+					<h3 id="correct">LOL<h3>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="footer">
+		<div id="block1">
+			<h1>GooD GamE</h1>
+			<ul>
+				<li>If You ReallY EnjoY this OnE Page GamE... And find all the letters of that <b>WorD</b>. </li>
+				<li>Message me the <b>Hindi</b> meaning of that<b>WorD</b>... and share your Experience to <b>Me only</b>.(Those who really enjoy my work... THANKS)</li>
+			</ul>
+			<br />
+			<h4>Thanks for Playing</h4>
+		</div>
+	</div>
+	<div id="footer-rights">
+		<h5>Built with love by <a href="https://www.linkedin.com/in/vikas-kumar-9a973624b/">Vikas Kumar</a></h5> <a href="https://www.linkedin.com/in/vikas-kumar-9a973624b/"> LinkdIn</a>	
+	</div> 
+</body>
+</html>
